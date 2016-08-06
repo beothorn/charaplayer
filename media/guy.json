@@ -2,33 +2,21 @@
     "frames": {
         "upLeft":{
             "frame": {"x":0,"y":0,"w":72,"h":96},
-            "rotated": false,
-            "trimmed": true,
-            "spriteSourceSize": {"x":0,"y":0,"w":72,"h":96},
-            "sourceSize": {"w":216,"h":384}
+            "sourceSize": {"w":72,"h":96}
         },
         "upStopped":{
             "frame": {"x":72,"y":0,"w":72,"h":96},
-            "rotated": false,
-            "trimmed": true,
-            "spriteSourceSize": {"x":0,"y":0,"w":72,"h":96},
-            "sourceSize": {"w":216,"h":384}
+            "sourceSize": {"w":72,"h":96}
         },
         "upRight":{
             "frame": {"x":144,"y":0,"w":72,"h":96},
-            "rotated": false,
-            "trimmed": true,
-            "spriteSourceSize": {"x":0,"y":0,"w":72,"h":96},
-            "sourceSize": {"w":216,"h":384}
+            "sourceSize": {"w":72,"h":96}
         }
     },
+    "animations":{
+        "upWalk":["upLeft","upStopped","upRight","upStopped"]
+    },
     "meta": {
-        "app": "http://www.texturepacker.com",
-        "version": "1.0",
-        "image": "guy.png",
-        "format": "RGB",
-        "size": {"w":216,"h":384},
-        "scale": "1",
-        "smartupdate": "$TexturePacker:SmartUpdate:2f213a6b451f9f5719773418dfe80ae8$"
+        "image": "guy.png"
     }
 }
