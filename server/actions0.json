@@ -1,0 +1,12 @@
+{
+    "script":[
+        {
+            "action":"create",
+            "object":"guy",
+            "id":1,
+            "animation":"downStopped",
+            "time":1000
+        }
+    ],
+    "whenAllDone":"actions42.json"
+}

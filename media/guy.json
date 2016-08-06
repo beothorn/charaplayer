@@ -1,20 +1,36 @@
 {
     "frames": {
         "upLeft":{
-            "frame": {"x":0,"y":0,"w":72,"h":96},
-            "sourceSize": {"w":72,"h":96}
+            "frame": {"x":0,"y":0,"w":24,"h":32},
+            "sourceSize": {"w":24,"h":32}
         },
         "upStopped":{
-            "frame": {"x":72,"y":0,"w":72,"h":96},
-            "sourceSize": {"w":72,"h":96}
+            "frame": {"x":24,"y":0,"w":24,"h":32},
+            "sourceSize": {"w":24,"h":32}
         },
         "upRight":{
-            "frame": {"x":144,"y":0,"w":72,"h":96},
-            "sourceSize": {"w":72,"h":96}
+            "frame": {"x":48,"y":0,"w":24,"h":32},
+            "sourceSize": {"w":24,"h":32}
+        },
+
+        "downLeft":{
+            "frame": {"x":0,"y":64,"w":24,"h":32},
+            "sourceSize": {"w":24,"h":32}
+        },
+        "downStopped":{
+            "frame": {"x":24,"y":64,"w":24,"h":32},
+            "sourceSize": {"w":24,"h":32}
+        },
+        "downRight":{
+            "frame": {"x":48,"y":64,"w":24,"h":32},
+            "sourceSize": {"w":24,"h":32}
         }
     },
     "animations":{
-        "upWalk":["upLeft","upStopped","upRight","upStopped"]
+        "upWalk":["upLeft","upStopped","upRight","upStopped"],
+        "upStopped":["upStopped"],
+        "downWalk":["downLeft","downStopped","downRight","downStopped"],
+        "downStopped":["downStopped"]
     },
     "meta": {
         "image": "guy.png"
