@@ -1,0 +1,11 @@
+{
+    "script":[
+        {
+            "id":"1",
+            "dest":{"x":0,"y":0},
+            "clip":"upWalk",
+            "time":1000
+        }
+    ],
+    "whenAllDone":"actions0"
+}

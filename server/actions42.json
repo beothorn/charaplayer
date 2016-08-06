@@ -1,10 +1,11 @@
 {
     "script":[
         {
-            "action":"move",
-            "id":1,
-            "dest":{x:0,y:2}
-            "animation":"downWalk"
+            "id":"1",
+            "dest":{"x":0,"y":2},
+            "clip":"downWalk",
+            "time":1000
         }
-    ]
+    ],
+    "whenAllDone":"actions100"
 }

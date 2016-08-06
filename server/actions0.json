@@ -1,12 +1,11 @@
 {
     "script":[
         {
-            "action":"create",
-            "object":"guy",
-            "id":1,
-            "animation":"downStopped",
+            "id":"1",
+            "pos":{"x":0,"y":0},
+            "clip":"downStopped",
             "time":1000
         }
     ],
-    "whenAllDone":"actions42.json"
+    "whenAllDone":"actions42"
 }
