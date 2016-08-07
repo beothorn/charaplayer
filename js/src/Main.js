@@ -1,6 +1,6 @@
 var renderer = PIXI.autoDetectRenderer(
-    cellWidth * 10, 
-    cellHeight * 15,
+    Config.cellWidth * Config.colSize, 
+    Config.cellHeight * Config.rowSize,
     {backgroundColor : 0xeeeeee}
 );
 
@@ -10,20 +10,33 @@ var stage = new PIXI.Container();
 
 PIXI.loader
     .add('guy','media/guy.json')
+    .add('back','media/back.json')
     .load(onAssetsLoaded);
 
 function onAssetsLoaded(load, resources){    
     var animations = {};
     Object.keys(resources.guy.data.animations)
-        .map((name) => animations[name] = resources.guy.data.animations[name].map(PIXI.Texture.fromFrame));
+        .forEach((name) => 
+            animations[name] = resources.guy.data.animations[name].map(PIXI.Texture.fromFrame));
 
-    play("actions0", animations);
+    var backTiles = {}; 
+    Object.keys(resources.back.data.frames)
+        .forEach((name) => backTiles[name] = PIXI.Texture.fromFrame(name) );
+
+    microAjax(Config.jsonApi+"b0x0_10x15", function (res){
+        var tilesJson = JSON.parse(res);
+        var grassTile = new PIXI.Sprite(backTiles["g"]);
+        grassTile.position.set(0,0);
+        stage.addChild(grassTile);    
+    }); 
+
+    Player.play("actions0", animations, backTiles);
 
     animate();
 }
 
 function animate(time) {
-    renderer.render(stage);
     TWEEN.update(time);
+    renderer.render(stage);
     requestAnimationFrame(animate);
 }

@@ -2,8 +2,7 @@
     "frames": {
         "upLeft":{
             "frame": {"x":0,"y":0,"w":24,"h":32},
-            "sourceSize": {"w":24,"h":32},
-            "spriteSourceSize": {"x":0,"y":24,"w":24,"h":24}
+            "sourceSize": {"w":24,"h":32}
         },
         "upStopped":{
             "frame": {"x":24,"y":0,"w":24,"h":32},
