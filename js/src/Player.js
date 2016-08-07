@@ -1,24 +1,21 @@
-var cellWidth = 24;
-var cellHeight = 32;
-
-var objectOnPlay = {};
+var objectsOnPlay = {};
 
 function play(action, animations){
     microAjax("/server/"+action+".json", function (res){ 
         var actionsJson = JSON.parse(res);
         var script = actionsJson.script[0];
         
-        if(!objectOnPlay[script.id]){
-            objectOnPlay[script.id] = new PIXI.extras.MovieClip(animations[script.clip]);
+        if(!objectsOnPlay[script.id]){
+            objectsOnPlay[script.id] = new PIXI.extras.MovieClip(animations[script.clip]);
         }else{
-            var newObjectOnPlay = new PIXI.extras.MovieClip(animations[script.clip]);
-            newObjectOnPlay.position.set(objectOnPlay[script.id].position.x, objectOnPlay[script.id].position.y);
-            stage.removeChild(objectOnPlay[script.id]);
-            objectOnPlay[script.id].destroy(false, false);
-            objectOnPlay[script.id] = newObjectOnPlay;
+            var newobjectsOnPlay = new PIXI.extras.MovieClip(animations[script.clip]);
+            newobjectsOnPlay.position.set(objectsOnPlay[script.id].position.x, objectsOnPlay[script.id].position.y);
+            stage.removeChild(objectsOnPlay[script.id]);
+            objectsOnPlay[script.id].destroy(false, false);
+            objectsOnPlay[script.id] = newobjectsOnPlay;
         }
 
-        var movie = objectOnPlay[script.id];
+        var movie = objectsOnPlay[script.id];
         if(script.pos){
             movie.position.set(script.pos.x * cellWidth, script.pos.y * cellHeight);    
         }
